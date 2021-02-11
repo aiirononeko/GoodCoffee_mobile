@@ -176,6 +176,7 @@ class CoffeePage extends StatefulWidget {
 }
 
 class _CoffeePage extends State<CoffeePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -183,7 +184,25 @@ class _CoffeePage extends State<CoffeePage> {
           title: Text('Good Coffee'),
           backgroundColor: Colors.grey,
         ),
-        body: Text('coffee page')
+        body: Center(
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              child: Text('ケニア 二エリ')
+            ),
+            Container(
+              child: Text('5←数字に応じて星を表示'),
+            ),
+            Container(
+              child: Text('ここにフレーバーがリスト表示')
+            ),
+            Container(
+              child: Text('ここにメモ書き表示')
+            )
+          ]
+          )
+        )
     );
   }
 }
