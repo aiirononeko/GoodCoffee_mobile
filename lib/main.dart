@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
 }
 
 class RegistrationPage extends StatefulWidget {
+
   RegistrationPage({Key key, this.title}) : super(key: key);
 
   final String title;
@@ -52,7 +53,15 @@ class _RegistrationPage extends State<RegistrationPage> {
                     child: const Text('apple IDで登録する'),
                     color: Colors.black,
                     textColor: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (context) {
+                              return UsersPage();
+                            }
+                        )
+                       );
+                    },
                   ),
                 ),
                 ButtonTheme(
@@ -62,7 +71,15 @@ class _RegistrationPage extends State<RegistrationPage> {
                     child: const Text('電話番号で登録する'),
                     color: Colors.black,
                     textColor: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) {
+                                return UsersPage();
+                              }
+                          )
+                      );
+                    },
                   ),
                 ),
                 ButtonTheme(
@@ -72,7 +89,15 @@ class _RegistrationPage extends State<RegistrationPage> {
                     child: const Text('メールアドレスで登録する'),
                     color: Colors.black,
                     textColor: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) {
+                                return UsersPage();
+                              }
+                          )
+                      );
+                    },
                   ),
                 ),
               ],
@@ -91,6 +116,14 @@ class UsersPage extends StatefulWidget {
 }
 
 class _UsersPage extends State<UsersPage> {
+
+  final List<MapEntry<String, int>> cuppedCoffee = [
+    MapEntry('ケニア 二エリ', 5),
+    MapEntry('エチオピア イルガチェフ', 4),
+    MapEntry('ブラジル へクレイオ', 3),
+    MapEntry('コスタリカ ドンマヨ', 4),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,6 +131,59 @@ class _UsersPage extends State<UsersPage> {
         title: Text('Good Coffee'),
         backgroundColor: Colors.grey,
       ),
+      body: ListView.builder(
+        itemCount: cuppedCoffee.length,
+        itemBuilder: (context, i) {
+          return _cuppedItem(cuppedCoffee[i].key, cuppedCoffee[i].value);
+        },
+      )
+    );
+  }
+
+  Widget _cuppedItem(String name, int score) {
+    return Container(
+      decoration: new BoxDecoration(
+          border: new Border(bottom: BorderSide(width: 1.0, color: Colors.grey))
+      ),
+      child:ListTile(
+        title: Text(
+          name,
+          style: TextStyle(
+              color:Colors.black,
+              fontSize: 18.0
+          ),
+        ),
+        leading: Text(
+          score.toString()
+        ),
+        onTap: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(
+                  builder: (context) {
+                    return CoffeePage();
+                  }
+              )
+          );
+        }
+      ),
+    );
+  }
+}
+
+class CoffeePage extends StatefulWidget {
+  @override
+  _CoffeePage createState() => _CoffeePage();
+}
+
+class _CoffeePage extends State<CoffeePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Good Coffee'),
+          backgroundColor: Colors.grey,
+        ),
+        body: Text('coffee page')
     );
   }
 }
