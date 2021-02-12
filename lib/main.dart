@@ -131,12 +131,24 @@ class _UsersPage extends State<UsersPage> {
         title: Text('Good Coffee'),
         backgroundColor: Colors.grey,
       ),
-      body: ListView.builder(
-        itemCount: cuppedCoffee.length,
-        itemBuilder: (context, i) {
-          return _cuppedItem(cuppedCoffee[i].key, cuppedCoffee[i].value);
-        },
-      )
+      body: Container(
+        child: ListView.builder(
+            itemCount: cuppedCoffee.length,
+            itemBuilder: (context, i) {
+              return _cuppedItem(cuppedCoffee[i].key, cuppedCoffee[i].value);
+            }
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(
+              builder: (context) {
+                return CuppingPage();
+              }
+          )
+        ),
+        child: Icon(Icons.add)
+      ),
     );
   }
 
@@ -203,6 +215,26 @@ class _CoffeePage extends State<CoffeePage> {
           ]
           )
         )
+    );
+  }
+}
+
+class CuppingPage extends StatefulWidget {
+  @override
+  _CuppingPage createState() => _CuppingPage();
+}
+
+class _CuppingPage extends State<CuppingPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Good Coffee'),
+        backgroundColor: Colors.grey
+      ),
+      body: Center(
+        child: Text('カッピングするページです')
+      )
     );
   }
 }
