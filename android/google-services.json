@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "340473807270",
+    "project_id": "goodcoffee-mobile-dev",
+    "storage_bucket": "goodcoffee-mobile-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340473807270:android:55489324e89011bf04cf67",
+        "android_client_info": {
+          "package_name": "dev.cuppingAppMobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340473807270-2ugmf70tjdebgo34sf4q1vuk95fpog4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjdyKBUEp0SRhaJiUUhfPR8gs5rd-mlww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340473807270-2ugmf70tjdebgo34sf4q1vuk95fpog4m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "340473807270-qidrn5asv9mkv6b2d9suostgu8vjt55c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.cuppingAppMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
