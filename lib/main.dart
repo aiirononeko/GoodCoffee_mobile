@@ -198,21 +198,21 @@ class _CoffeePage extends State<CoffeePage> {
         ),
         body: Center(
           child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              child: Text('ケニア 二エリ')
-            ),
-            Container(
-              child: Text('5←数字に応じて星を表示'),
-            ),
-            Container(
-              child: Text('ここにフレーバーがリスト表示')
-            ),
-            Container(
-              child: Text('ここにメモ書き表示')
-            )
-          ]
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                child: Text('ケニア 二エリ')
+              ),
+              Container(
+                child: Text('5←数字に応じて星を表示'),
+              ),
+              Container(
+                child: Text('ここにフレーバーがリスト表示')
+              ),
+              Container(
+                child: Text('ここにメモ書き表示')
+              )
+            ]
           )
         )
     );
